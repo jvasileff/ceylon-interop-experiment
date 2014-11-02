@@ -1,3 +1,3 @@
 module com.example.helloworld "1.0.0" {
-  import "org.springframework:spring-context" "4.0.3.RELEASE";
+  import "com.google.guava:guava" "18.0";
 }
