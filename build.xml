@@ -13,13 +13,17 @@
             <pathelement location="${ceylon.ant.lib}"/>
         </path>
         <typedef resource="com/redhat/ceylon/ant/antlib.xml" classpathref="ant-tasks"/>
+        <reposet id="reposet.compile">
+            <repo url="aether"/>
+        </reposet>
     </target>
-	
+
     <target name="default" depends="doc, run">
     </target>
 
     <target name="compile" depends="ceylon-ant-taskdefs">
         <ceylon-compile encoding="${source.encoding}">
+            <reposet refid="reposet.compile"/>
             <module name="com.example.helloworld"/>
         </ceylon-compile>
     </target>
@@ -32,12 +36,15 @@
 
     <target name="doc" depends="ceylon-ant-taskdefs">
         <ceylon-doc encoding="${source.encoding}">
+            <reposet refid="reposet.compile"/>
             <module name="com.example.helloworld"/>
         </ceylon-doc>
     </target>
 
     <target name="run" depends="compile">
-        <ceylon-run module="com.example.helloworld/1.0.0"/>
+        <ceylon-run module="com.example.helloworld/1.0.0">
+            <reposet refid="reposet.compile"/>
+        </ceylon-run>
     </target>
 
     <target name="run-js" depends="compile-js">
