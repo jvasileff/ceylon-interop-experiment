@@ -1,17 +1,13 @@
-"The classic Hello World program"
-shared void hello(String name = "World") {
-    print("Hello, `` name ``!");
-}
+import com.example.moduleB { moduleBID, moduleBVersionOfD, createDClass }
+import com.example.moduleC { moduleCID, moduleCVersionOfD, acceptDClass }
+import com.example.moduleD { moduleDID, moduleDVersion }
 
-"Run the module `com.example.helloworld`." 
-shared void run(){
-    if (nonempty args=process.arguments) {
-        for (arg in args) {
-            hello(arg);
-        }
-    }
-    else {
-        hello();
-    }
+shared void run() {
+    print("Version of D used by hello-world: ``moduleDVersion``");
+    print("Version of D used by B: ``moduleBVersionOfD``");
+    print("Version of D used by C: ``moduleCVersionOfD``");
+    print("");
+    print("Attempting to pass a ModuleDClass instance from module B to module C");
+    acceptDClass(createDClass());
+    print("Done.");
 }
-
