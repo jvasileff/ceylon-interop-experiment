@@ -1,7 +1,7 @@
 import com.example.moduleD { moduleDID, moduleDVersion, ModuleDClass }
 
 shared String moduleBID = "moduleB";
-shared String moduleBVersion = "version 1.0.0";
+shared String moduleBVersion = "version 1.0.2";
 shared String moduleBVersionOfD = moduleDVersion; 
 
 shared class ModuleBClass() { }

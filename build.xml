@@ -53,13 +53,13 @@
     </target>
 
     <target name="run" depends="compile">
-        <ceylon-run module="com.example.helloworld/1.0.0">
+        <ceylon-run module="com.example.helloworld/1.0.2">
             <reposet refid="reposet.compile"/>
         </ceylon-run>
     </target>
 
     <target name="run-js" depends="compile-js">
-        <ceylon-run-js module="com.example.helloworld/1.0.0">
+        <ceylon-run-js module="com.example.helloworld/1.0.2">
             <reposet refid="reposet.compile"/>
         </ceylon-run-js>
     </target>

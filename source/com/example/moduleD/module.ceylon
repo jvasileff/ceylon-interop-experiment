@@ -1,1 +1,1 @@
-module com.example.moduleD "1.0.0" {} 
+module com.example.moduleD "1.0.2" {}
