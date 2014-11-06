@@ -25,9 +25,11 @@
     <target name="compile" depends="ceylon-ant-taskdefs">
         <ceylon-compile encoding="${source.encoding}">
             <module name="com.example.helloworld"/>
+            <!--
             <module name="com.example.moduleB"/>
             <module name="com.example.moduleC"/>
             <module name="com.example.moduleD"/>
+            -->
             <reposet refid="reposet.compile"/>
         </ceylon-compile>
     </target>
@@ -35,9 +37,11 @@
     <target name="compile-js" depends="ceylon-ant-taskdefs">
         <ceylon-compile-js encoding="${source.encoding}">
             <module name="com.example.helloworld"/>
+            <!--
             <module name="com.example.moduleB"/>
             <module name="com.example.moduleC"/>
             <module name="com.example.moduleD"/>
+            -->
             <reposet refid="reposet.compile"/>
         </ceylon-compile-js>
     </target>
@@ -45,21 +49,23 @@
     <target name="doc" depends="ceylon-ant-taskdefs">
         <ceylon-doc encoding="${source.encoding}">
             <module name="com.example.helloworld"/>
+            <!--
             <module name="com.example.moduleB"/>
             <module name="com.example.moduleC"/>
             <module name="com.example.moduleD"/>
+            -->
             <reposet refid="reposet.compile"/>
         </ceylon-doc>
     </target>
 
     <target name="run" depends="compile">
-        <ceylon-run module="com.example.helloworld/1.0.2">
+        <ceylon-run module="com.example.helloworld/1.0.3">
             <reposet refid="reposet.compile"/>
         </ceylon-run>
     </target>
 
     <target name="run-js" depends="compile-js">
-        <ceylon-run-js module="com.example.helloworld/1.0.2">
+        <ceylon-run-js module="com.example.helloworld/1.0.3">
             <reposet refid="reposet.compile"/>
         </ceylon-run-js>
     </target>
